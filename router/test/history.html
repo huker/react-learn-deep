@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a onclick="push('/a')">go A</a>
+<a onclick="push('/b')">go B</a>
+<script>
+    function push(path) {
+        history.pushState({ p: path }, null, path);
+    }
+    //浏览器历史记录
+    window.addEventListener('popstate',function(e){
+        console.log(e)
+    })
+</script>
+</body>
+</html>
